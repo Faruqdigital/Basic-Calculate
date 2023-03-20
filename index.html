@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document!</title>
+</head>
+
+<body>
+
+    <style>
+        .container{
+            max-width: 600px;
+            margin: auto;
+            background-color: rgb(247, 242, 227);
+            padding: 20px;
+        }
+        h2, h3{
+            color: rgb(95, 13, 228);
+        }
+        h3{
+            color: rgb(36, 238, 18);
+        } 
+        .input{
+            margin-bottom: 1rem;
+        }
+    </style>
+
+    <div class="container">
+        <div class="input">
+            <h2>Basic Calculate</h2>
+            <input type="number" placeholder="Enter value" id="numOne">
+            <input type="number" placeholder="Enter value" id="numTwo">
+        </div>
+
+        <div class="buttons">
+            <button id="add">Add</button>
+            <button id="subtract">Subtract</button>
+            <button id="dividion">Division</button>
+            <button id="multiply">Multiply</button>
+            <button id="reset">Reset</button>
+        </div>
+
+        <div class="result">
+            <h3>Result: <span id="result">00</span></h3>
+        </div>
+    </div>
+
+</body>
+
+</html>

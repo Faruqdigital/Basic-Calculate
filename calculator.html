@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    1. Input - 2ta number 
+    2. Addition, subtraction, division, multiply -->
+
+    <style>
+      .container {
+        max-width: 600px;
+        margin: auto;
+      }
+
+      .buttons {
+        margin-top: 1rem;
+      }
+    </style>
+
+    <div class="container">
+      <div class="input">
+        <h2>Insert Value</h2>
+        <input type="number" id="numOne" placeholder="Enter Value" />
+        <input type="number" id="numTwo" placeholder="Enter Value" />
+      </div>
+
+      <div class="buttons">
+        <button id="add" onclick="add()">ADD +</button>
+        <button onclick="subtract()">SUBTRACT -</button>
+        <button onclick="multiply()">MULTIPLY *</button>
+        <button onclick="division()">DIVISION /</button>
+        <button onclick="reset()">Reset</button>
+      </div>
+
+      <div class="result">
+        <h2>Outcome</h2>
+        <h3 id="outcome"></h3>
+      </div>
+    </div>
+
+    <script>
+      //   step 1: taking the input values
+      let inputOne = document.getElementById("numOne");
+      let inputTwo = document.getElementById("numTwo");
+      let outCome = document.getElementById("outcome");
+      //   console.log(typeof inputTwo.value);
+
+      //   do the add function
+      function add() {
+        if (inputOne.value && inputTwo.value) {
+          let operation = parseInt(inputOne.value) + parseInt(inputTwo.value);
+          outCome.innerHTML += `Sum of ${inputOne.value} + ${inputTwo.value} numbers: ${operation} <br><br>`;
+        } else {
+          alert("Enter all the inputs!!! :(");
+        }
+      }
+
+      function subtract() {
+        if (inputOne.value && inputTwo.value) {
+          let operation = parseInt(inputOne.value) - parseInt(inputTwo.value);
+          outCome.innerHTML += `Subtraction of two numbers: ${operation} <br><br>`;
+        } else {
+          alert("Enter all the inputs!!! :(");
+        }
+      }
+
+      function multiply() {
+        if (inputOne.value && inputTwo.value) {
+          let operation = parseInt(inputOne.value) * parseInt(inputTwo.value);
+          outCome.innerHTML += `Multiplication of two numbers: ${operation} <br><br>`;
+        } else {
+          alert("Enter all the inputs!!! :(");
+        }
+      }
+
+      function division() {
+        if (inputOne.value && inputTwo.value) {
+          let operation = parseInt(inputOne.value) / parseInt(inputTwo.value);
+          outCome.innerHTML += `Division of two numbers: ${operation} <br><br>`;
+        } else {
+          alert("Enter all the inputs!!! :(");
+        }
+      }
+
+      function reset() {
+        outCome.innerHTML = "";
+        inputOne.value = "";
+        inputTwo.value = "";
+      }
+
+      //   let sum = document.getElementById("add");
+
+      //   sum.addEventListener("click", add);
+    </script>
+  </body>
+</html>
