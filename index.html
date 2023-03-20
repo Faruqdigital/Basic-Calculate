@@ -11,19 +11,23 @@
 <body>
 
     <style>
-        .container{
+        .container {
             max-width: 600px;
             margin: auto;
             background-color: rgb(247, 242, 227);
             padding: 20px;
         }
-        h2, h3{
+
+        h2,
+        h3 {
             color: rgb(95, 13, 228);
         }
-        h3{
+
+        h3 {
             color: rgb(36, 238, 18);
-        } 
-        .input{
+        }
+
+        .input {
             margin-bottom: 1rem;
         }
     </style>
@@ -36,17 +40,76 @@
         </div>
 
         <div class="buttons">
-            <button id="add">Add</button>
-            <button id="subtract">Subtract</button>
-            <button id="dividion">Division</button>
-            <button id="multiply">Multiply</button>
-            <button id="reset">Reset</button>
+            <button id="add" onclick="add ()">Add</button>
+            <button id="subtract" onclick="subtract ()">Subtract</button>
+            <button id="dividion" onclick="division() ">Division</button>
+            <button id="multiply" onclick="multiply()">Multiply</button> <br> <br>
+            <button id="reset" onclick="reset ()">Reset</button>
         </div>
 
         <div class="result">
-            <h3>Result: <span id="result">00</span></h3>
+            <h3>Total: <span id="total">00</span></h3>
         </div>
     </div>
+
+    <script>
+        // step 01. taking the input values
+        const numOne = document.getElementById("numOne");
+        const numTwo = document.getElementById("numTwo");
+        const total = document.getElementById("total");
+
+        // add function
+        function add() {
+            if (numOne.value && numTwo.value) {
+                let sum = parseInt(numOne.value) + parseInt(numTwo.value);
+                total.innerText = sum;
+            }
+            else {
+                alert("Fill all of the input")
+            }
+        }
+
+        //subtract function
+        function subtract() {
+            if (numOne.value && numTwo.value) {
+                let sum = parseInt(numOne.value) - parseInt(numTwo.value);
+                total.innerText = sum;
+            }
+            else {
+                alert("Fill all of the input")
+            }
+        }
+
+        //division function
+        function division() {
+            if (numOne.value && numTwo.value) {
+                let sum = parseInt(numOne.value) / parseInt(numTwo.value);
+                total.innerText = sum.toFixed(2);
+            }
+            else {
+                alert("Fill all of the input")
+            }
+        }
+
+        //multiply function
+        function multiply() {
+            if (numOne.value && numTwo.value) {
+                let sum = parseInt(numOne.value) * parseInt(numTwo.value);
+                total.innerText = sum;
+            }
+            else {
+                alert("Fill all of the input")
+            }
+        }
+
+        //reset
+        function reset () {
+            numOne.value = "";
+            numTwo.value = "";
+            total.innerHTML = "";
+        }
+
+    </script>
 
 </body>
 
